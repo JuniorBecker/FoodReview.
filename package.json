@@ -5,11 +5,12 @@
   "main": "Server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=procucao node Server",
+    "dev": "cross-env NODE_ENV=desenvolvimento node Server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JuniorBecker/FoodReview.git"
+    "url": "git+https://github.com/JuniorBecker/FoodReview..git"
   },
   "keywords": [
     "review",
@@ -26,5 +27,8 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
