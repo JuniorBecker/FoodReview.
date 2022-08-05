@@ -1,6 +1,7 @@
 // Importa o aquivo express no arquivo js
 import express from 'express'
 import dotenv from 'dotenv'
+import mysql from 'mysql'
 
 // Load Config
 dotenv.config({path: './config/config.env'})
@@ -22,3 +23,29 @@ Server.get("/", (req, res) => {
 Server.get("/user", (req, res) => {
     res.send("Página do Usuário")
 })
+
+
+
+
+
+
+
+
+// MYSQL
+
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'foodreview',
+  password : 'foodreview',
+  database : 'foodreview'
+});
+ 
+// inicia a conecxão
+connection.connect();
+ 
+connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+ 
+connection.end();
